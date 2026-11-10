@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+
+# Add your canonical production sitemap URL after deployment:
+# Sitemap: https://your-real-domain.example/sitemap.xml

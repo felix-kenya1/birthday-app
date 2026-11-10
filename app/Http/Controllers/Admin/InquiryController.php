@@ -1,0 +1,4 @@
+<?php
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;use App\Models\Inquiry;use Illuminate\Http\Request;use Illuminate\Validation\Rule;
+class InquiryController extends Controller { public function index(){return view('admin.inquiries.index',['inquiries'=>Inquiry::latest()->paginate(20)]);} public function show(Inquiry $inquiry){if(!$inquiry->read_at)$inquiry->update(['read_at'=>now(),'status'=>$inquiry->status==='new'?'read':$inquiry->status]);return view('admin.inquiries.show',compact('inquiry'));} public function update(Request $r,Inquiry $inquiry){$d=$r->validate(['status'=>['required',Rule::in(['new','read','replied','archived'])],'admin_notes'=>'nullable|string|max:5000']);$inquiry->update($d);return back()->with('status','Inquiry updated.');} public function destroy(Inquiry $inquiry){$inquiry->delete();return redirect()->route('admin.inquiries.index')->with('status','Inquiry deleted.');} }
