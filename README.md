@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Birthday Surprise — Integrated Laravel Application
 
 This is the consolidated Laravel 12 project for the birthday website and its private administration dashboard. It combines the public celebration experience, database-backed content management, administrator authentication, inquiries, and baseline security/SEO features in one Laravel application.
@@ -128,3 +129,6 @@ Do not use `php artisan migrate:fresh` on a database containing data you want to
 ## Verification scope
 
 The source archive has been statically checked: PHP source files pass PHP lint, Blade templates compile to PHP that passes PHP lint, and Laravel route registration succeeds in the build environment. The build environment does not have the MySQL PDO driver or DOM/mbstring XML extensions enabled, so database migrations and the PHPUnit suite could not be executed here. Run the commands above on the target XAMPP installation and resolve any local environment errors before production use.
+=======
+# birthday-app
+>>>>>>> 894b3d93c6816cd5cfecad6c01387ba9772ee842
